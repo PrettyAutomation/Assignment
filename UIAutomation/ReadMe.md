@@ -18,6 +18,8 @@
 
 9) chrome driver executable file is present in the driver folder
 
+10) To perform cross browser testing i have given the option to choose browser mozila or chrome.Due to time constraing i did not added the firfox driver file.
+
 
 
 
