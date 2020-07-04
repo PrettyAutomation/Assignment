@@ -66,7 +66,7 @@ public class UseCase02 extends TestBase {
                     }else{
                         System.out.println("final price after discount is not correct");
                     }
-
+                    count ++;
                 }catch (Exception e){
                 }
             }
