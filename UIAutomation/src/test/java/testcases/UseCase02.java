@@ -45,7 +45,10 @@ public class UseCase02 extends TestBase {
             }
             scrollToElement(element);
 
+            //Check for the number of items which have a discount if available and also verify that the
+            //final price after discount is correct or not
             List<WebElement> list = driver.findElements(By.xpath(Items));
+            int count = 0;
             for(int i=1; i<=list.size(); i++) {
                 try {
                     String originalPrice = driver.findElement(By.xpath(price1 + i + originalPriceSecondPart)).getText().substring(1);
@@ -67,6 +70,7 @@ public class UseCase02 extends TestBase {
                 }catch (Exception e){
                 }
             }
+            System.out.println("No. of Discounted item is " + count);
         }catch (Exception e){
             e.printStackTrace();
         }
