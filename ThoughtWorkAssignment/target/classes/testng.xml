@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Amazon place order Automation Test Suite">
+
+    <listeners>
+        <listener class-name="util.ExtentReporterNG" />
+    </listeners>
+
+    <test name="Amazon TestCases">
+        <classes>
+            <class name="Assignment2"></class>
+        </classes>
+    </test>
+</suite>
