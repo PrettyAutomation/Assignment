@@ -18,8 +18,7 @@
 
 #### High Level Framework design with Automation script for given scenario
 
-#### Project structure: Maven Project : Utility classes, Resources, driver, config, are added in main/java package
-                                   Test classes are added in test/java package
+#### Project structure: Maven Project : Utility classes, Resources, driver, config, are added in main/java package and Test classes are added in test/java package
 
 // The test scenario which has been taken is :
 
