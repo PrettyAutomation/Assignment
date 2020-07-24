@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="92cbc857-18ea-4f75-830c-3aec5df90136" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/json_output/cucumber.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/junit_xml/cucumber.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/Features/Contacts.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/Features/Deal.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/Features/Hook.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/Features/dealMap.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/Features/login.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/Features/tagging.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/stepDefinition/DealMapDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/stepDefinition/DealStepDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/stepDefinition/HooksDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/stepDefinition/LoginStepDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/stepDefinition/TagDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/src/main/java/testRunner/TestRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/test-output/formatter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/test-output/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/test-output/jquery-1.8.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/test-output/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BDDFramework/test-output/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/json_output/cucumber.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/junit_xml/cucumber.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/src/main/java/Features/login.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/src/main/java/stepDefinition/LoginStepDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/src/main/java/testRunner/TestRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/test-output/formatter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/test-output/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/test-output/jquery-1.8.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/test-output/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenBDDFramework/test-output/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/ReadMe.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/src/main/java/config/Data_v0.1.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/src/main/java/config/config1.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/src/main/java/driver/chromedriver" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/src/main/java/util/CommonConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/src/main/java/util/ExtentReporterNG.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/src/main/java/util/PalindromeUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/src/main/java/util/TestBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/src/main/resources/Palinddropm_HLTC_v0.1.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/src/main/resources/testng.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/src/test/java/Assignment2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/src/test/java/CreatePalindromeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/target/classes/META-INF/ThoughtWorkAssignment.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/target/classes/Palinddropm_HLTC_v0.1.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/target/classes/testng.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/target/classes/util/CommonConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/target/classes/util/ExtentReporterNG.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/target/classes/util/PalindromeUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/target/classes/util/TestBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/target/test-classes/Assignment2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/target/test-classes/CreatePalindromeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/target/test-classes/META-INF/ThoughtWorkAssignment.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/target/test-classes/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThoughtWorkAssignment/test-output/Extent.html" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1679" />
+    <option name="height" value="923" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AltimetricAPIAssignment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AltimetricAPIAssignment" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="92cbc857-18ea-4f75-830c-3aec5df90136" name="Default Changelist" comment="" />
+      <created>1595580673402</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595580673402</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1679" height="923" extended-state="0" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24984728" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="SOQL Query" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Log Analyzer" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Anonymous Apex" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
