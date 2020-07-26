@@ -8,7 +8,7 @@
 * TC must pass/fail base on assertion
 * Handle screen rotation efficiently.
 
-### Pre-Requisite
+### Detail about the Automation project
 
 * Automation Script is written using selenium web driver with java
 * TestNG framework is used to create the test
