@@ -44,7 +44,7 @@ public class TestBase implements CommonConstants{
 		}		
 	}
 
-
+	// initialize the browser and launch url
 	public void initialize() {
 		
 		String browserName = prop.getProperty("browser");
@@ -74,20 +74,11 @@ public class TestBase implements CommonConstants{
 	
 	}
 
-	//click on element
-	public void scriptClick(WebElement elem){
-		((JavascriptExecutor) driver).executeScript("arguments[0].click;", elem);
-	}
-
 	//Scroll to the bottom of page
 	public  void scrollToBottom(){
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);");
 	}
 
-    //Scroll to the element
-	public  void scrollToElement(WebElement element){
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-	}
 
 	public void switchToWindow(){
 		for(String window :driver.getWindowHandles()){
