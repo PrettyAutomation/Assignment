@@ -55,13 +55,13 @@ public class FlipkartTest01 extends TestBase {
                 driver.navigate().refresh();
                 pauseMe(2);
 
+                //get the list of camera name and respective their price on order selection page
                 List<WebElement> cameraList = driver.findElements(By.xpath(listOfCameraResult));
                 int cameraListSize = cameraList.size();
-
                 List<WebElement> priceList = driver.findElements(By.xpath(listOfPrice));
                 int priceListSize = priceList.size();
 
-
+               //get the list of camera name and respective their price on cart page
                 List<String> itemDetail = null;
                 if(cameraListSize > 2 && priceListSize>1){
                     itemDetail = findItemInList(cameraList,priceList,prop.getProperty(perticularCameraItem));
@@ -73,6 +73,7 @@ public class FlipkartTest01 extends TestBase {
                 String CartPageCameraName = driver.findElement(By.xpath(CartPageNameXpath)).getText();
                 String CartPagePrice = driver.findElement(By.xpath(CartPagePriceXpath)).getText();
 
+                //to verify the name and price on cart page and order selection page are same
                 Assert.assertTrue(CartPageCameraName.contains(itemDetail.get(0)));
                 Assert.assertEquals(itemDetail.get(1), CartPagePrice);
 
@@ -89,6 +90,7 @@ public class FlipkartTest01 extends TestBase {
                 switchToWindow();
                 dismissAlert();
 
+                //Checkout page
                 driver.findElement(By.xpath(Continue)).click();
                 Assert.assertTrue(driver.findElement(By.xpath(ErrorOnWrongMobileOrEmail)).isDisplayed());
 
@@ -102,6 +104,7 @@ public class FlipkartTest01 extends TestBase {
                      System.out.println("Wrong Info provided");
                 }
                 }catch (Exception e){
+                  //Logout from flipkart and verify
                   driver.navigate().back();
                   elem = driver.findElement(By.xpath(MyAccount));
                   mouseOver(elem);
