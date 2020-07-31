@@ -19,3 +19,13 @@
 * To get the environment variable like browser and url used property file
 * ExtentReporterNG class is added to generate Extent Report using testng.xml file and saved in test-ouput folder
 
+
+### FeedBack Collaborated
+
+1) implemented page object model
+2) Added the switch case for cross browser testing
+3) Implemented the grid setup the hub and node creation bat file added in resource folder
+   go to terminal and inside the project directory and run sh hub.bat and in another terminal run sh node.bat command
+   then run the test case by adding gridsetup method instead of initialize method.
+
+
