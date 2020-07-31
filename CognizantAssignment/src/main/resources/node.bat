@@ -1,0 +1,1 @@
+java -Dwebdriver.chrome.driver="/Users/pretty.sanwale/eclipse/reporting-2019-09/Assignment/CognizantAssignment/src/main/java/driver/chromedriver " -jar  selenium-server-standalone-3.141.59.jar -role node -hub http://10.166.149.32:4444/grid/register 
