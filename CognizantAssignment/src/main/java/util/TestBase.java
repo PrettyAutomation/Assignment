@@ -7,12 +7,16 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -31,41 +35,71 @@ public class TestBase implements CommonConstants{
 	public static Properties prop;
 
 	public TestBase() {
-		
 		prop = new Properties();
-
 		try {
 			FileInputStream fis = new FileInputStream("src/main/java/config/FlipkartData.properties");
 			prop.load(fis);
 			
 		} catch( Exception e) {
-			
 			e.printStackTrace();	
 		}		
 	}
 
+
 	// initialize the browser and launch url
 	public void initialize() {
-		
-		String browserName = prop.getProperty("browser");
-	
-		if(browserName.equals("chrome")) {
-		
-		   System.setProperty("webdriver.chrome.driver","src/main/java/driver/chromedriver");
-		   driver = new ChromeDriver();	
-		   
-		}else {
-			
-			System.setProperty("webdriver.gecko.driver","put the path of firefox driver.exe file");
-			   driver = new FirefoxDriver();	
+
+		int browser = Integer.parseInt(prop.getProperty("browser"));
+
+		switch (browser){
+			case 1 :
+				System.setProperty("webdriver.chrome.driver","src/main/java/driver/chromedriver");
+				driver = new ChromeDriver();
+				break;
+			case 2 :
+				System.setProperty("webdriver.gecko.driver","src/main/java/driver/geckodriver");
+				driver = new FirefoxDriver();
+				break;
+			case 3 :
+				System.setProperty("webdriver.ie.driver","put the path of IE driver.exe file");
+				driver = new InternetExplorerDriver();
+				break;
+
+			default:
+				System.out.println("no match");
 		}
-		
+
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
-	      	
+	}
+
+	public void gridSetup(){
+	try {
+			//1. Define Capability
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.setBrowserName("chrome");
+			capabilities.setPlatform(Platform.MAC);
+
+			//2. Chrome Option definition
+//			ChromeOptions options = new ChromeOptions();
+//			options.merge(capabilities);
+
+			String huburl = "http://10.166.149.32:4444/wd/hub";
+			WebDriver driver = new RemoteWebDriver(new URL(huburl),capabilities);
+			driver.manage().window().maximize();
+			driver.manage().deleteAllCookies();
+			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.get(prop.getProperty("url"));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		driver.get("");
+
 	}
 
 	public void wait(WebElement elem, int time) {
