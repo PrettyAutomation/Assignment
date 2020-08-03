@@ -6,6 +6,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -66,7 +67,9 @@ public class TestBase implements CommonConstants{
 				break;
 
 			default:
-				System.out.println("no match");
+				System.setProperty("webdriver.chrome.driver","src/main/java/driver/chromedriver");
+				driver = new ChromeDriver();
+				break;
 		}
 
 		driver.manage().window().maximize();
@@ -84,22 +87,20 @@ public class TestBase implements CommonConstants{
 			capabilities.setPlatform(Platform.MAC);
 
 			//2. Chrome Option definition
-//			ChromeOptions options = new ChromeOptions();
-//			options.merge(capabilities);
+			ChromeOptions options = new ChromeOptions();
+			options.merge(capabilities);
 
 			String huburl = "http://10.166.149.32:4444/wd/hub";
-			WebDriver driver = new RemoteWebDriver(new URL(huburl),capabilities);
+			WebDriver driver = new RemoteWebDriver(new URL(huburl),options);
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.get(prop.getProperty("url"));
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		driver.get("");
-
+		}catch (Exception e) {
+		   e.printStackTrace();
+	    }
 	}
 
 	public void wait(WebElement elem, int time) {
