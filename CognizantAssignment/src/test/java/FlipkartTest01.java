@@ -1,11 +1,16 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import util.TestBase;
+import util.pages.CartPage;
+import util.pages.CheckoutPage;
+import util.pages.HomePage;
+
 import java.util.List;
 import static org.testng.Assert.*;
 
@@ -21,12 +26,17 @@ import static org.testng.Assert.*;
 */
 
 public class FlipkartTest01 extends TestBase {
-
-        public WebElement elem;
+    public HomePage homePage = new HomePage();
+    public CartPage cartPage = new CartPage();
+    public CheckoutPage checkoutPage = new CheckoutPage();
 
         @BeforeTest
         public void loginWeb(){
             initialize();
+            //gridSetup();
+            PageFactory.initElements(driver,homePage);
+            PageFactory.initElements(driver,cartPage);
+            PageFactory.initElements(driver,checkoutPage);
         }
 
         @AfterTest
@@ -43,77 +53,72 @@ public class FlipkartTest01 extends TestBase {
         @Test (dataProvider = "getLoginData")
         public void searchCamera(String emailOrMobile, String password) throws InterruptedException {
 
+                // On HomePage Search for the item
                 switchToWindow();
-                driver.findElement(By.xpath(close)).click();
-                elem = driver.findElement(By.xpath(searchBox));
-                assertNotNull(elem);
-                elem.sendKeys(prop.getProperty(searchItem));
-                elem = driver.findElement(By.xpath(submit));
-                elem.click();
+                homePage.close.click();
+                assertNotNull(homePage.searchBox);
+                homePage.searchBox.sendKeys(prop.getProperty(searchItem));
+                homePage.submit.click();
 
                 scrollToBottom();
                 driver.navigate().refresh();
                 pauseMe(2);
 
-                //get the list of camera name and respective their price on order selection page
-                List<WebElement> cameraList = driver.findElements(By.xpath(listOfCameraResult));
-                int cameraListSize = cameraList.size();
-                List<WebElement> priceList = driver.findElements(By.xpath(listOfPrice));
-                int priceListSize = priceList.size();
+                //get the list of camera name and respective their price on HomePage
+                int cameraListSize = homePage.listOfCameraResult.size();
+                int priceListSize = homePage.listOfPrice.size();
 
-               //get the list of camera name and respective their price on cart page
+
+               //get the list of camera name and respective their price on HomePage
                 List<String> itemDetail = null;
                 if(cameraListSize > 2 && priceListSize>1){
-                    itemDetail = findItemInList(cameraList,priceList,prop.getProperty(perticularCameraItem));
+                    itemDetail = findItemInList(homePage.listOfCameraResult,homePage.listOfPrice, prop.getProperty(perticularCameraItem));
                     Assert.assertNotNull(itemDetail);
                 }
 
                 switchToWindow();
 
-                String CartPageCameraName = driver.findElement(By.xpath(CartPageNameXpath)).getText();
-                String CartPagePrice = driver.findElement(By.xpath(CartPagePriceXpath)).getText();
+                //to verify the name and price on cart page and Home page are same
 
-                //to verify the name and price on cart page and order selection page are same
-                Assert.assertTrue(CartPageCameraName.contains(itemDetail.get(0)));
-                Assert.assertEquals(itemDetail.get(1), CartPagePrice);
+                Assert.assertTrue(cartPage.CartPageNameXpath.getText().contains(itemDetail.get(0)));
+                Assert.assertEquals(itemDetail.get(1), cartPage.CartPagePriceXpath.getText());
 
+                // Click on Buy now if any error message occur due to not availability of item catch by the below code and stop the testcase.
                 try {
                       takeScreenshot();
-                      driver.findElement(By.xpath(BuyNow)).click();
-                      elem = driver.findElement(By.xpath(Continue));
-                      Assert.assertNotNull(elem);
+                      cartPage.BuyNow.click();
+                      Assert.assertNotNull(cartPage.Continue);
                 }catch (Exception e){
                      e.printStackTrace();
                      System.out.println("issue with product availability");
+                     driver.quit();
                 }
 
+                // Switch to Checkout page
                 switchToWindow();
                 dismissAlert();
+                cartPage.Continue.click();
+                Assert.assertTrue(checkoutPage.ErrorOnWrongMobileOrEmail.isDisplayed());
 
-                //Checkout page
-                driver.findElement(By.xpath(Continue)).click();
-                Assert.assertTrue(driver.findElement(By.xpath(ErrorOnWrongMobileOrEmail)).isDisplayed());
-
-                driver.findElement(By.xpath(EnterMobileNo)).sendKeys(emailOrMobile);
-                driver.findElement(By.xpath(Continue)).click();
-                driver.findElement(By.xpath(EnterPassword)).sendKeys(password);
-                driver.findElement(By.xpath(submit)).click();
+                checkoutPage.EnterMobileNo.sendKeys(emailOrMobile);
+                cartPage.Continue.click();
+                checkoutPage.EnterPassword.sendKeys(password);
+                homePage.submit.click();
 
                 try{
-                if(driver.findElement(By.xpath(WrongUserNamePsw)).isDisplayed()){
+                if(checkoutPage.WrongUserNamePsw.isDisplayed()){
                      System.out.println("Wrong Info provided");
                 }
                 }catch (Exception e){
                   //Logout from flipkart and verify
                   driver.navigate().back();
-                  elem = driver.findElement(By.xpath(MyAccount));
-                  mouseOver(elem);
+                  mouseOver(cartPage.MyAccount);
                   pauseMe(1);
-                  driver.findElement(By.xpath(svgForLogout)).click();
+                  cartPage.svgForLogout.click();
                   pauseMe(3);
-                  driver.findElement(By.xpath(Logout)).click();
+                  cartPage.Logout.click();
                   pauseMe(3);
-                  Assert.assertTrue(driver.findElement(By.xpath(login)).isDisplayed());
+                  Assert.assertTrue(cartPage.Login.isDisplayed());
                   System.out.println("Logout successfully");
                 }
         }
