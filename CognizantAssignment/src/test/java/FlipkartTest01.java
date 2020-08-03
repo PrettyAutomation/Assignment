@@ -1,5 +1,3 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -62,7 +60,6 @@ public class FlipkartTest01 extends TestBase {
 
                 scrollToBottom();
                 driver.navigate().refresh();
-                pauseMe(2);
 
                 //get the list of camera name and respective their price on HomePage
                 int cameraListSize = homePage.listOfCameraResult.size();
@@ -113,11 +110,8 @@ public class FlipkartTest01 extends TestBase {
                   //Logout from flipkart and verify
                   driver.navigate().back();
                   mouseOver(cartPage.MyAccount);
-                  pauseMe(1);
                   cartPage.svgForLogout.click();
-                  pauseMe(3);
                   cartPage.Logout.click();
-                  pauseMe(3);
                   Assert.assertTrue(cartPage.Login.isDisplayed());
                   System.out.println("Logout successfully");
                 }
