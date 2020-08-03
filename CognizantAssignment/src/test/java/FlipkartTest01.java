@@ -1,3 +1,5 @@
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -27,6 +29,7 @@ public class FlipkartTest01 extends TestBase {
     public HomePage homePage = new HomePage();
     public CartPage cartPage = new CartPage();
     public CheckoutPage checkoutPage = new CheckoutPage();
+    public Logger logger = LogManager.getLogger(FlipkartTest01.class);
 
         @BeforeTest
         public void loginWeb(){
@@ -87,7 +90,7 @@ public class FlipkartTest01 extends TestBase {
                       Assert.assertNotNull(cartPage.Continue);
                 }catch (Exception e){
                      e.printStackTrace();
-                     System.out.println("issue with product availability");
+                     logger.error("issue with product availability");
                      driver.quit();
                 }
 
@@ -104,7 +107,7 @@ public class FlipkartTest01 extends TestBase {
 
                 try{
                 if(checkoutPage.WrongUserNamePsw.isDisplayed()){
-                     System.out.println("Wrong Info provided");
+                     logger.error("Wrong Info provided");
                 }
                 }catch (Exception e){
                   //Logout from flipkart and verify
@@ -113,7 +116,7 @@ public class FlipkartTest01 extends TestBase {
                   cartPage.svgForLogout.click();
                   cartPage.Logout.click();
                   Assert.assertTrue(cartPage.Login.isDisplayed());
-                  System.out.println("Logout successfully");
+                  logger.info("Logout successfully");
                 }
         }
 }
