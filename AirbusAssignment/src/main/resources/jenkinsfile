@@ -1,0 +1,26 @@
+pipeline{
+     agent any
+     stages('Compile Stage'){
+          steps{
+             withMaven(maven : 'maven version updated in jenkins'){
+                  sh 'mvn clean compile'
+             }
+          }
+     }
+
+     stages('Testing Stage'){
+          steps{
+              withMaven(maven : 'maven version updated in jenkins'){
+                   sh 'mvn test'
+              }
+          }
+     }
+
+     stages('Deployment Stage'){
+           steps{
+              withMaven(maven : 'maven version updated in jenkins'){
+                   sh 'mvn deploy'
+              }
+           }
+     }
+}
