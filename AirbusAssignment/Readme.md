@@ -22,11 +22,7 @@ To open the dashboard : minikube dashboard
 #### To create the services:
 kubectl apply -f elasticstack/elasticsearch.yml
 
-kubectl apply -f elasticstack/kibana.yml, 
-
-kubectl apply -f elasticstack/filebeat-configmap.yml,
-
-kubectl apply -f elasticstack/filebeat-service-account.yml
+kubectl apply -f elasticstack/kibana.yml,
 
 #### To verify the pods are ready
 
