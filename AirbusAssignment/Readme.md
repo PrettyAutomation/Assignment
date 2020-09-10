@@ -6,8 +6,10 @@ Pre-requisite:
 
 System should have
 1)kubectl
-2)docker
-3)minikube
+
+2)docker 
+
+3)minikube 
 
 * brew update && brew install kubectl && brew cask install docker && brew install minikube
 
@@ -19,13 +21,17 @@ To open the dashboard : minikube dashboard
 
 #### To create the services:
 kubectl apply -f elasticstack/elasticsearch.yml
-kubectl apply -f elasticstack/kibana.yml
-kubectl apply -f elasticstack/filebeat-configmap.yml
+
+kubectl apply -f elasticstack/kibana.yml, 
+
+kubectl apply -f elasticstack/filebeat-configmap.yml,
+
 kubectl apply -f elasticstack/filebeat-service-account.yml
 
 #### To verify the pods are ready
 
-kubectl get pods --all-namespaces
+kubectl get pods --all-namespaces,
+
 kubectl describe pods <pod-name>
 
 ### if all pods are ready
