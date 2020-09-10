@@ -1,0 +1,22 @@
+node {
+
+   stage('SCM Checkout'){
+    // Clone repo
+	git branch: 'scratch/CompletedAirtelAssignment',
+	credentialsId: 'github',
+	url: 'https://github.com/PrettyAutomation/Assignment/AirbusAssignment'
+
+   }
+
+   stage('Mvn Package'){
+	   // Build using maven
+	   sh "${mvn} clean package deploy"
+   }
+
+   stage('Deploy'){
+    // Deploy the services
+    script{
+           sh "docker run -d -p 8080:8080 --name=AirbusAssignment ${DOCKER_TAG}"
+    	  }
+   }
+}
