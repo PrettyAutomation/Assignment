@@ -5,7 +5,6 @@ node {
 	git branch: 'scratch/CompletedAirtelAssignment',
 	credentialsId: 'github',
 	url: 'https://github.com/PrettyAutomation/Assignment/AirbusAssignment'
-
    }
 
    stage('Mvn Package'){
@@ -16,7 +15,11 @@ node {
    stage('Deploy'){
     // Deploy the services
     script{
-           sh "docker run -d -p 8080:8080 --name=AirbusAssignment ${DOCKER_TAG}"
+            minikube start
+            kubectl get nodes
+            kubectl create namespace ${NAMESPACE} || true
+            kubectl apply -f elasticstack/elasticsearch.yml --namespace=${NAMESPACE}
+            kubectl apply -f elasticstack/kibana.yml --namespace=${NAMESPACE}
     	  }
    }
 }
