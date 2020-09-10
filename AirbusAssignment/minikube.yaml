@@ -1,0 +1,25 @@
+stages:
+- test
+- deploy
+
+variables:
+  NAMESPACE: "default"
+
+test_stack:
+  stage: test
+  variables:
+    NAMESPACE: "test"
+  script:
+  - kubectl create namespace ${NAMESPACE} || true
+  - kubectl apply -f elasticstack/elasticsearch.yml --namespace=${NAMESPACE}
+  - kubectl apply -f elasticstack/kibana.yml --namespace=${NAMESPACE}
+  - kubectl apply -f elasticstack/filebeat-configmap.yml --namespace=${NAMESPACE}
+  - kubectl apply -f elasticstack/filebeat-service-account.yml --namespace=${NAMESPACE}
+  - src/test/testFile
+
+deploy_stack:
+  when: manual
+  variables:
+    NAMESPACE: "live"
+  stage: deploy
+  script: "echo 'This is the deploy stage'"
